@@ -1,211 +1,67 @@
+<!DOCTYPE html>
 <html class="scroll-smooth" lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <title>PL Hosting</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: "Inter", sans-serif;
     }
-    header nav {
-      max-width: 90vw;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-    }
-    header nav > div:first-child {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    header nav > div:first-child img {
-      width: 2rem;
-      height: 2rem;
-      user-select: none;
-    }
-    header nav > div:first-child span {
-      font-weight: 800;
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      color: white;
-      user-select: none;
-    }
-    header nav ul {
-      display: flex;
-      gap: clamp(1rem, 3vw, 2.5rem);
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-weight: 400;
-      font-size: clamp(0.875rem, 1vw, 1rem);
-      color: white;
-    }
-    header nav ul li a {
-      color: white;
-      text-decoration: none;
-      transition: text-decoration 0.3s ease;
-      user-select: none;
-    }
-    header nav ul li a:hover,
-    header nav ul li a:focus {
-      text-decoration: underline;
-      outline: none;
-    }
-    header nav a.client-area {
-      background-color: #4b2ca6;
-      color: white;
-      font-weight: 600;
-      font-size: clamp(0.75rem, 1vw, 0.875rem);
-      padding: 0.5rem 1.25rem;
-      border-radius: 0.375rem;
-      text-decoration: none;
-      user-select: none;
-      transition: background-color 0.3s ease;
-      white-space: nowrap;
-    }
-    header nav a.client-area:hover,
-    header nav a.client-area:focus {
-      background-color: #070707;
-      outline: none;
-    }
-    main {
-      max-width: 90vw;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-    section.hero {
-      background-color: #2e0e7a;
-      border-radius: 2.5rem;
-      padding: clamp(2rem, 3vw, 4rem);
-      display: flex;
+    /* MENU HAMBURGUER */
+    .menu-toggle {
+      display: none;
       flex-direction: column;
-      align-items: center;
-      gap: clamp(1.5rem, 3vw, 3rem);
-      text-align: center;
-    }
-    section.hero h1 {
-      font-weight: 800;
-      font-size: clamp(2.5rem, 6vw, 3.5rem);
-      line-height: 1.1;
-      color: white;
-      margin: 0;
-    }
-    section.hero p {
-      font-size: clamp(1.125rem, 3vw, 1.25rem);
-      line-height: 1.5;
-      color: white;
-      margin: 1;
-      max-width: 28rem;
-    }
-    section.hero button {
-      background-color: #c73f8e;
-      color: white;
-      font-weight: 800;
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      padding: clamp(0.75rem, 1vw, 1rem) clamp(1.5rem, 3vw, 2rem);
-      border-radius: 0.5rem;
-      border: none;
       cursor: pointer;
-      width: max-content;
-      transition: background-color 0.3s ease;
-      user-select: none;
+      gap: 5px;
     }
-    section.hero button:hover,
-    section.hero button:focus {
-      background-color: #b03a7f;
-      outline: none;
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: white;
     }
-    section.testimonials {
-      background-color: #0b091a;
-      border-radius: 2.5rem;
-      margin-top: 2rem;
-      padding: clamp(2rem, 3vw, 3rem);
-      display: flex;
-      justify-content: center;
-      gap: clamp(2rem, 5vw, 4rem);
-      flex-wrap: wrap;
+    nav ul {
+      transition: max-height 0.3s ease;
     }
-    section.testimonials > div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: clamp(0.5rem, 1vw, 1rem);
-      min-width: 100px;
-      max-width: 140px;
-    }
-    section.testimonials > div > div {
-      width: 5rem;
-      height: 5rem;
-      border-radius: 50%;
-      background-color: #2e0e7a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      user-select: none;
-    }
-    section.testimonials > div > div img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      user-select: none;
-    }
-    section.testimonials > div > span {
-      font-weight: 600;
-      font-size: clamp(0.875rem, 1vw, 1rem);
-      color: white;
-      user-select: none;
-      text-align: center;
-    }
-    /* Responsive adjustments */
-    @media (min-width: 768px) {
-      section.hero {
-        flex-direction: row;
-        text-align: left;
-        justify-content: space-between;
-        padding-left: clamp(3rem, 5vw, 6rem);
-        padding-right: clamp(3rem, 5vw, 6rem);
+    @media (max-width: 768px) {
+      nav ul {
+        overflow: hidden;
+        flex-direction: column;
+        max-height: 0;
       }
-      section.hero h1,
+      nav ul.open {
+        max-height: 500px;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
+    /* HERO AJUSTES MOBILE */
+    @media (max-width: 480px) {
+      section.hero h1 {
+        font-size: 2rem;
+      }
       section.hero p {
-        max-width: 40rem;
+        font-size: 1rem;
       }
       section.hero button {
-        align-self: flex-start;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
       }
-    }
-    @media (max-width: 480px) {
-      section.testimonials {
-        gap: 1.5rem;
+      main {
         padding-left: 1rem;
         padding-right: 1rem;
       }
-      section.testimonials > div {
-        max-width: 100px;
-        min-width: 80px;
-      }
-      section.testimonials > div > div {
-        width: 4rem;
-        height: 4rem;
-      }
-      section.testimonials > div > span {
-        font-size: clamp(0.75rem, 3vw, 0.875rem);
+    }
+    /* TESTIMONIALS MOBILE */
+    @media (max-width: 480px) {
+      section.testimonials {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
       }
     }
   </style>
@@ -214,15 +70,13 @@
   <header class="bg-[#0b091a] border-b border-[#1f1b2e]">
     <nav>
       <div>
-        <img
-          alt="Ícone roxo com dois servidores empilhados representando PL Hosting"
-          height="32"
-          src="https://storage.googleapis.com/a1aa/image/537190de-eb93-4c8c-c1bb-8a3bbf2e0b58.jpg"
-          width="32"
-          draggable="false"
-          loading="lazy"
-        />
+        <img alt="PL Hosting" src="https://storage.googleapis.com/a1aa/image/537190de-eb93-4c8c-c1bb-8a3bbf2e0b58.jpg" width="32" height="32" />
         <span>PL HOSTING</span>
+      </div>
+      <div class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
       <ul>
         <li><a href="#">Home</a></li>
@@ -230,64 +84,39 @@
         <li><a href="#">Planos</a></li>
         <li><a href="#">Suporte</a></li>
       </ul>
-      <a class="client-area" href="#">Area do Cliente</a>
+      <a class="client-area" href="#">Área do Cliente</a>
     </nav>
   </header>
   <main>
-    <section class="hero" aria-label="Seção principal com título, descrição e botão">
+    <section class="hero text-center md:text-left">
       <div>
-        <h1>
-          POTÊNCIA PARA<br />
-          SEU SERVIDOR
-        </h1>
-        <p>
-          Hospedagem de ser vidores e VPS com<br />
-          alto desempenho e suporte especializado
-        </p>
+        <h1>POTÊNCIA PARA<br />SEU SERVIDOR</h1>
+        <p>Hospedagem de servidores e VPS com alto desempenho e suporte especializado</p>
         <button type="button">CONTRATE AGORA</button>
       </div>
     </section>
-    <section class="testimonials" aria-label="Depoimentos de clientes">
+    <section class="testimonials">
       <div>
-        <div>
-          <img
-            alt="Foto de Ana Souza, mulher com cabelo preto, pele clara, sorrindo, em fundo roxo escuro circular"
-            draggable="false"
-            height="80"
-            loading="lazy"
-            src="https://storage.googleapis.com/a1aa/image/a9cf25bc-286a-4787-8e8e-d46c87d1d8da.jpg"
-            width="80"
-          />
-        </div>
+        <div><img src="https://storage.googleapis.com/a1aa/image/a9cf25bc-286a-4787-8e8e-d46c87d1d8da.jpg" alt="Ana Souza" /></div>
         <span>Ana Souza</span>
       </div>
       <div>
-        <div>
-          <img
-            alt="Foto de Marco Silva, homem com cabelo curto castanho e barba, sorrindo, em fundo roxo escuro circular"
-            draggable="false"
-            height="80"
-            loading="lazy"
-            src="https://storage.googleapis.com/a1aa/image/2996e225-ed3b-48d0-61d4-9746ec083a66.jpg"
-            width="80"
-          />
-        </div>
+        <div><img src="https://storage.googleapis.com/a1aa/image/2996e225-ed3b-48d0-61d4-9746ec083a66.jpg" alt="Marco Silva" /></div>
         <span>Marco Silva</span>
       </div>
       <div>
-        <div>
-          <img
-            alt="Foto de Pedro Almeida, homem com cabelo curto castanho e barba, sorrindo, em fundo roxo escuro circular"
-            draggable="false"
-            height="80"
-            loading="lazy"
-            src="https://storage.googleapis.com/a1aa/image/41fcc667-e9d0-494a-f90a-3cfcd5e5fe9a.jpg"
-            width="80"
-          />
-        </div>
+        <div><img src="https://storage.googleapis.com/a1aa/image/41fcc667-e9d0-494a-f90a-3cfcd5e5fe9a.jpg" alt="Pedro Almeida" /></div>
         <span>Pedro Almeida</span>
       </div>
     </section>
   </main>
+  <script>
+    // Fecha menu ao clicar em um link (opcional)
+    document.querySelectorAll('nav ul li a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('nav ul').classList.remove('open');
+      });
+    });
+  </script>
 </body>
 </html>
