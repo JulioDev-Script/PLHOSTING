@@ -171,7 +171,6 @@
       user-select: none;
       text-align: center;
     }
-    /* Melhorias de responsividade */
     @media (max-width: 768px) {
       header nav {
         flex-direction: column;
@@ -216,6 +215,43 @@
   </style>
 </head>
 <body class="bg-[#0f0e1a] text-white">
-  <!-- Restante do HTML permanece igual -->
+  <header>
+    <nav>
+      <div>
+        <img src="logo.png" alt="Logo PL Hosting">
+        <span>PL Hosting</span>
+      </div>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Planos</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+      <a href="#" class="client-area">Área do Cliente</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Hospedagem de Qualidade</h1>
+      <p>Servidores potentes, estabilidade e suporte que você precisa para crescer seu projeto.</p>
+      <button>Ver Planos</button>
+    </section>
+
+    <section class="testimonials">
+      <div>
+        <div><img src="user1.jpg" alt="Cliente 1"></div>
+        <span>"Serviço excelente!"</span>
+      </div>
+      <div>
+        <div><img src="user2.jpg" alt="Cliente 2"></div>
+        <span>"Recomendo muito!"</span>
+      </div>
+      <div>
+        <div><img src="user3.jpg" alt="Cliente 3"></div>
+        <span>"Atendimento top!"</span>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
