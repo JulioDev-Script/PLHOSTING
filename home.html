@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PL Hosting - Hospedagem Profissional para SAMP e MTA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+        }
+        
+        .gaming-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+        
+        .gaming-card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .gaming-card:hover {
+            transform: translateY(-5px);
+            border-color: #6366f1;
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.2);
+        }
+        
+        .btn-gaming {
+            background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn-gaming:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+        }
+        
+        .server-online {
+            background-color: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10b981;
+        }
+        
+        .server-offline {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #ef4444;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #6366f1;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="gaming-bg">
+    <!-- Navbar -->
+    <nav class="bg-slate-900/80 backdrop-blur-md fixed w-full z-50 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-server text-indigo-500 text-2xl"></i>
+                    <a href="#" class="text-2xl font-bold text-white">PL <span class="text-indigo-500">Hosting</span></a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="nav-link text-slate-300 hover:text-white px-3 py-2">Início</a>
+                    <a href="#plans" class="nav-link text-slate-300 hover:text-white px-3 py-2">Planos</a>
+                    <a href="#features" class="nav-link text-slate-300 hover:text-white px-3 py-2">Vantagens</a>
+                    <a href="#status" class="nav-link text-slate-300 hover:text-white px-3 py-2">Status</a>
+                    <a href="Faq.html" class="nav-link text-slate-300 hover:text-white px-3 py-2">FAQ</a>
+                    <a href="login.html" class="btn-gaming text-white py-2 px-5 rounded-lg text-sm ml-2">
+                        <i class="fas fa-user-circle mr-2"></i>Área do Cliente
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-slate-300 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <div class="pb-3 pt-2 space-y-2">
+                    <a href="#home" class="block py-2 px-4 text-slate-300 hover:text-white hover:bg-slate-800 rounded">Início</a>
+                    <a href="#plans" class="block py-2 px-4 text-slate-300 hover:text-white hover:bg-slate-800 rounded">Planos</a>
+                    <a href="#features" class="block py-2 px-4 text-slate-300 hover:text-white hover:bg-slate-800 rounded">Vantagens</a>
+                    <a href="#status" class="block py-2 px-4 text-slate-300 hover:text-white hover:bg-slate-800 rounded">Status</a>
+                    <a href="Faq.html" class="block py-2 px-4 text-slate-300 hover:text-white hover:bg-slate-800 rounded">FAQ</a>
+                    <a href="login.html" class="btn-gaming text-white py-2 px-4 rounded-lg w-full text-left mt-2">
+                        <i class="fas fa-user-circle mr-2"></i>Área do Cliente
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center opacity-20"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Hospedagem <span class="text-indigo-500">Profissional</span> para SAMP/MTA</h1>
+                    <p class="text-xl mb-8 text-slate-300">Servidores de alta performance com uptime 99.9% e suporte especializado para sua comunidade de GTA.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#plans" class="btn-gaming text-white py-3 px-8 rounded-lg text-center">Ver Planos</a>
+                        <a href="#features" class="bg-slate-800 text-white py-3 px-8 rounded-lg text-center hover:bg-slate-700 transition border border-slate-700">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-indigo-500/20 rounded-xl blur-lg"></div>
+                        <img src="/bg.png" alt="SAMP Server" class="relative w-full max-w-md rounded-full border-2 border-indigo-500/30">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section id="plans" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Nossos <span class="text-indigo-500">Planos</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Escolha o plano perfeito para o seu servidor de San Andreas Multiplayer ou Multi Theft Auto</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Plano Básico -->
+                <div class="gaming-card p-8 rounded-xl">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1">Básico</h3>
+                            <p class="text-slate-400">Ideal para servidores iniciantes</p>
+                        </div>
+                        <div class="bg-indigo-900/50 px-3 py-1 rounded-full text-indigo-400 text-sm font-medium">Popular</div>
+                    </div>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-white">R$29,90</span>
+                        <span class="text-slate-400">/mês</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">100 Slots</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">1GB RAM DDR4</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">SSD 20GB</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">DDoS Protection</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">Painel Web</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn-gaming text-white py-3 px-8 rounded-lg text-center block">Contratar</a>
+                </div>
+                
+                <!-- Plano Premium -->
+                <div class="gaming-card p-8 rounded-xl relative border-2 border-indigo-500">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-indigo-500 text-white px-4 py-1 rounded-full text-sm font-semibold">Recomendado</div>
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-1">Premium</h3>
+                        <p class="text-slate-400">Para servidores em crescimento</p>
+                    </div>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-white">R$59,90</span>
+                        <span class="text-slate-400">/mês</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">250 Slots</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">2GB RAM DDR4</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">SSD 50GB</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">DDoS Protection Plus</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">Painel Web + App</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">Backup Diário</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn-gaming text-white py-3 px-8 rounded-lg text-center block">Contratar</a>
+                </div>
+                
+                <!-- Plano Enterprise -->
+                <div class="gaming-card p-8 rounded-xl">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-1">Enterprise</h3>
+                        <p class="text-slate-400">Para servidores profissionais</p>
+                    </div>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-white">R$99,90</span>
+                        <span class="text-slate-400">/mês</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">500 Slots</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">4GB RAM DDR4</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">SSD 100GB</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">DDoS Protection Enterprise</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">Painel Web + App</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">Backup em Tempo Real</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-indigo-500 mr-3"></i>
+                            <span class="text-slate-300">Suporte 24/7 VIP</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn-gaming text-white py-3 px-8 rounded-lg text-center block">Contratar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Por que escolher a <span class="text-indigo-500">PL Hosting</span>?</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Temos tudo o que você precisa para rodar seu servidor SAMP/MTA sem preocupações</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="gaming-card p-6 rounded-lg">
+                    <div class="w-12 h-12 bg-indigo-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-bolt text-indigo-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Performance</h3>
+                    <p class="text-slate-400">Hardware de última geração com processadores Intel Xeon e SSD NVMe para rodar seu servidor sem lag.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="gaming-card p-6 rounded-lg">
+                    <div class="w-12 h-12 bg-indigo-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-indigo-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Proteção</h3>
+                    <p class="text-slate-400">Defesa contra DDoS com mitigação de até 480Gbps para manter seu servidor online mesmo sob ataque.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="gaming-card p-6 rounded-lg">
+                    <div class="w-12 h-12 bg-indigo-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-dollar-sign text-indigo-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Custo-benefício</h3>
+                    <p class="text-slate-400">Planos acessíveis que cabem no seu bolso, com a qualidade e estabilidade que seu servidor SAMP/MTA merece</p>
+                </div>

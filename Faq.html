@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PL Hosting - Hospedagem Profissional para SAMP e MTA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+        }
+        
+        .gaming-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+        
+        .gaming-card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .gaming-card:hover {
+            transform: translateY(-5px);
+            border-color: #6366f1;
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.2);
+        }
+        
+        .btn-gaming {
+            background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn-gaming:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #6366f1;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        /* Estilos específicos para o FAQ */
+        .faq-item {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-content {
+            max-height: 300px;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="gaming-bg">
+    <!-- Seção FAQ -->
+    <section id="faq" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Perguntas <span class="text-indigo-500">Frequentes</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Tire suas dúvidas sobre nossa hospedagem de SAMP/MTA</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- FAQ Item 1 -->
+                <div class="gaming-card p-6 rounded-lg faq-item">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-white">Quais são os requisitos para usar a hospedagem?</h3>
+                        <i class="fas fa-chevron-down text-indigo-500 faq-toggle transition-transform"></i>
+                    </div>
+                    <div class="faq-content mt-4">
+                        <p class="text-slate-400">Você só precisa ter um servidor SAMP ou MTA configurado. Nós cuidamos de toda a infraestrutura necessária, desde hardware até proteção DDoS.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="gaming-card p-6 rounded-lg faq-item">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-white">Como faço para migrar meu servidor atual?</h3>
+                        <i class="fas fa-chevron-down text-indigo-500 faq-toggle transition-transform"></i>
+                    </div>
+                    <div class="faq-content mt-4">
+                        <p class="text-slate-400">Oferecemos migração gratuita! Basta nos enviar seus arquivos ou acesso ao servidor atual e nossa equipe faz a transferência completa.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="gaming-card p-6 rounded-lg faq-item">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-white">Qual é o tempo de ativação após a compra?</h3>
+                        <i class="fas fa-chevron-down text-indigo-500 faq-toggle transition-transform"></i>
+                    </div>
+                    <div class="faq-content mt-4">
+                        <p class="text-slate-400">Ativação instantânea! Seus servidores estarão disponíveis em menos de 5 minutos após a confirmação do pagamento.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="gaming-card p-6 rounded-lg faq-item">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-white">Vocês oferecem suporte a mods e plugins?</h3>
+                        <i class="fas fa-chevron-down text-indigo-500 faq-toggle transition-transform"></i>
+                    </div>
+                    <div class="faq-content mt-4">
+                        <p class="text-slate-400">Sim! Suportamos todos os mods e plugins populares para SAMP e MTA. Caso precise de ajuda, nossa equipe está disponível 24/7.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="gaming-card p-6 rounded-lg faq-item">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-white">Posso escalar meu plano no futuro?</h3>
+                        <i class="fas fa-chevron-down text-indigo-500 faq-toggle transition-transform"></i>
+                    </div>
+                    <div class="faq-content mt-4">
+                        <p class="text-slate-400">Com certeza! Você pode fazer upgrade a qualquer momento sem custos de migração e sem tempo de inatividade.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 6 -->
+                <div class="gaming-card p-6 rounded-lg faq-item">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-white">Qual é a política de reembolso?</h3>
+                        <i class="fas fa-chevron-down text-indigo-500 faq-toggle transition-transform"></i>
+                    </div>
+                    <div class="faq-content mt-4">
+                        <p class="text-slate-400">Oferecemos garantia de 7 dias. Se não estiver satisfeito, devolvemos 100% do seu dinheiro sem questionamentos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <h3 class="text-xl font-semibold text-slate-300 mb-4">Ainda tem dúvidas?</h3>
+                <a href="https://discord.gg/Uh2ZVWmPFD" class="btn-gaming inline-flex items-center text-white py-3 px-8 rounded-lg">
+                    <i class="fas fa-headset mr-3"></i> Fale com nosso suporte
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // FAQ Accordion Functionality
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
